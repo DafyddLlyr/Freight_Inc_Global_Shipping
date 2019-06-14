@@ -6,7 +6,7 @@
 body {
   background-color: lightgrey;
   display: grid;
-  grid-template-columns: 30vw auto;
+  grid-template-columns: 30vw 70vw;
   grid-template-rows: 10vh auto;
   grid-template-areas:
     'header header'
@@ -36,10 +36,41 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: blue; */
+  background-color: blue;
 }
 
 .shipping-order {
-  /* background-color: pink; */
-  width: 100%
+  background-color: pink;
+  width: 60vw;
+  margin: 2vw;
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'priority order-id order-id'
+    'priority order-details shipping-date'
+}
+
+.priority {
+  grid-area: priority;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  text-align: center;
+}
+
+.order-id {
+  grid-area: order-id;
+  background-color: green;
+}
+
+.order-details {
+  grid-area: order-details;
+  background-color: lightgreen;
+}
+
+.shipping-date {
+  grid-area: shipping-date;
+  background-color: lightblue;
 }
