@@ -27,37 +27,54 @@ const priorityToString = function(priorityInt) {
   }
 }
 
+const idCreator = function() {
+  return `FGS${Math.floor(Math.random() * 5000) + 1}`
+}
+
 const createNewOrder = function() {
+
   const newOrder = document.createElement('div');
   newOrder.classList.add('shipping-order');
 
-  const inputCustomer = document.createElement('p');
-  inputCustomer.textContent = this.customer.value;
-  newOrder.appendChild(inputCustomer);
+  const inputId = idCreator()
+  const displayId = document.createElement('p');
+  displayId.textContent = `Order ID: ${inputId}`;
+  newOrder.appendChild(displayId);
 
-  const inputFreight = document.createElement('p');
-  inputFreight.textContent = this.freightContent.value;
-  newOrder.appendChild(inputFreight)
+  const inputCustomer = this.customer.value
+  const displayCustomer = document.createElement('p');
+  customer.textContent = `Customer: ${inputCustomer}`;
+  newOrder.appendChild(displayCustomer);
 
-  const inputCountry = document.createElement('p');
-  inputCountry.textContent = document.getElementById('countryList').value;
-  newOrder.appendChild(inputCountry);
+  const inputFreight = this.freightContent.value
+  const displayFreight = document.createElement('p');
+  displayFreight.textContent = `Freight Content: ${inputFreight}`;
+  newOrder.appendChild(displayFreight)
 
-  const inputSize = document.createElement('p');
-  inputSize.textContent = containerSize(this.size20, this.highYes);
-  newOrder.appendChild(inputSize);
+  const inputCountry = document.getElementById('countryList').value;
+  const displayCountry = document.createElement('p');
+  displayCountry.textContent = `Country: ${inputCountry}`
+  newOrder.appendChild(displayCountry);
 
-  const inputWeight = document.createElement('p');
-  inputWeight.textContent = this.weight.valueAsNumber;
-  newOrder.appendChild(inputWeight);
+  const inputSize = containerSize(this.size20, this.highYes)
+  const displaySize = document.createElement('p');
+  displaySize.textContent = `Container Size: ${inputSize}`;
+  newOrder.appendChild(displaySize);
 
-  const inputPriority = document.createElement('p');
-  inputPriority.textContent = priorityToString(this.priority.valueAsNumber);
-  newOrder.appendChild(inputPriority);
+  const inputWeight = this.weight.valueAsNumber;
+  const displayWeight = document.createElement('p');
+  displayWeight.textContent = `Weight: ${inputWeight}`;
+  newOrder.appendChild(displayWeight);
 
-  const inputDate = document.createElement('p');
-  inputDate.textContent = this.shippingDate.value;
-  newOrder.appendChild(inputDate);
+  const inputPriority = priorityToString(this.priority.valueAsNumber)
+  const displayPriority = document.createElement('p');
+  displayPriority.textContent = `Priority: ${inputPriority}`;
+  newOrder.appendChild(displayPriority);
+
+  const inputDate = this.shippingDate.value
+  const displayDate = document.createElement('p');
+  displayDate.textContent = `Shipping Date: ${inputDate}`;
+  newOrder.appendChild(displayDate);
 
   return newOrder;
 }
