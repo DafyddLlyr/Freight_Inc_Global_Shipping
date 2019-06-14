@@ -87,7 +87,7 @@ const createOrderDetails = function () {
 
   const inputCustomer = this.customer.value
   const displayCustomer = document.createElement('p');
-  customer.textContent = `Customer: ${inputCustomer}`;
+  displayCustomer.textContent = `Customer: ${inputCustomer}`;
   orderDetails.appendChild(displayCustomer);
 
   const inputFreight = this.freightContent.value
