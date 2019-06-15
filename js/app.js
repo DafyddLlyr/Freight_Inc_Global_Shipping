@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const formSubmit = document.querySelector('#new-order-form');
   formSubmit.addEventListener('submit', handleFormSubmit);
+
+  const deleteAll = document.querySelector('#delete-all');
+  deleteAll.addEventListener('click', handleDeleteAll);
 })
 
 const containerLength = function(twenty) {
@@ -111,7 +114,6 @@ const createOrderDetails = function () {
   orderDetails.appendChild(displayWeight);
 
   return orderDetails;
-
 }
 
 const createShippingDate = function () {
@@ -125,4 +127,10 @@ const createShippingDate = function () {
   shippingDate.appendChild(displayDate);
 
   return shippingDate;
+}
+
+const handleDeleteAll = function () {
+  event.preventDefault();
+  const orderList = document.querySelector("#content-column");
+  orderList.innerHTML= '';
 }
