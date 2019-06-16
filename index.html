@@ -309,7 +309,11 @@
 
       <div class="form-item">
         <label for="priority">Priority</label>
-        <input type="range" min="1" max ="5" name="priority" value="3" required id="priority">
+        <div class="form-slider">
+          <output for="priority" id="priority-output">Medium</output>
+          <input type="range" min="1" max ="5" name="priority" value="3" id="priority" oninput="outputUpdate(value)" required>
+        </div>
+
       </div>
 
       <div class="form-item">

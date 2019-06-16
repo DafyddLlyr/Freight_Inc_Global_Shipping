@@ -105,6 +105,12 @@ input[type=date] {
   width: auto;
 }
 
+.form-slider {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
 #content-column {
   display: flex;
   flex-direction: column;
@@ -166,6 +172,7 @@ table {
 th {
   text-align: left;
   padding-left: 0.5vw;
+  width: 30%;
 }
 
 tr:nth-child(even) {

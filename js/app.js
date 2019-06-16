@@ -164,3 +164,8 @@ const tableRow = function(heading, data) {
 
   return newTableRow;
 }
+
+function outputUpdate(priority) {
+  priorityString = priorityToString(parseInt(priority));
+	document.querySelector('#priority-output').value = priorityString;
+}
