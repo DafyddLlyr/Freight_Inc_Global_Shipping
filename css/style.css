@@ -90,7 +90,19 @@ input, select, textarea {
   font-family: inherit;
   font-size: inherit;
   border: 1px lightgrey solid;
-  padding: 0 0.5vw;
+  width: 100%;
+}
+
+#size40,
+#size20,
+#highYes,
+#highNo {
+  width: auto;
+}
+
+
+input[type=date] {
+  width: auto;
 }
 
 #content-column {
@@ -114,6 +126,7 @@ input, select, textarea {
   border: none;
   cursor:pointer;
   box-shadow: 2px 2px black;
+  width: auto;
 }
 
 .button:hover {
@@ -167,6 +180,7 @@ input, select, textarea {
   grid-area: order-details;
   padding: 0.5vw;
   background-color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
 }
 
 .shipping-date {

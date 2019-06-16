@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const deleteAll = document.querySelector('#delete-all');
   deleteAll.addEventListener('click', handleDeleteAll);
+
+  const containerSize20 = document.querySelector('#size20');
+  size20.addEventListener('change', handleContainerSizeChange);
+
+  const containerSize40 = document.querySelector('#size40');
+  size40.addEventListener('change', handleContainerSizeChange);
 })
 
 const containerLength = function(twenty) {
@@ -133,4 +139,10 @@ const handleDeleteAll = function () {
   event.preventDefault();
   const orderList = document.querySelector("#content-column");
   orderList.innerHTML= '';
+}
+
+const handleContainerSizeChange = function () {
+  const containerWeight = document.querySelector('#weight');
+  const size20 = document.querySelector('#size20');
+  size20.checked ? containerWeight.max = 20000 : containerWeight.max = 26500;
 }
