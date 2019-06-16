@@ -50,6 +50,7 @@ const handleFormSubmit = function () {
   const shippingDate = createShippingDate(this);
 
   const newOrder = document.createElement('div');
+  newOrder.classList.add(`priority-${this.priority.value}`);
   newOrder.classList.add('shipping-order');
 
   newOrder.appendChild(priority);
@@ -67,10 +68,13 @@ const createPriority = function () {
   const orderPriority = document.createElement('div');
   orderPriority.classList.add('priority');
 
+  priorityIcon = document.createElement('i');
+  priorityIcon.classList.add('fas', createPriorityIcon());
+  orderPriority.appendChild(priorityIcon);
+
   const inputPriority = priorityToString(this.priority.valueAsNumber)
   const displayPriority = document.createElement('p');
   displayPriority.textContent = `Priority: ${inputPriority}`;
-  // orderPriority.classList.add(`priority-${this.priority.value}`)
   orderPriority.appendChild(displayPriority);
 
   return orderPriority;
@@ -145,4 +149,9 @@ const handleContainerSizeChange = function () {
   const containerWeight = document.querySelector('#weight');
   const size20 = document.querySelector('#size20');
   size20.checked ? containerWeight.max = 20000 : containerWeight.max = 26500;
+}
+
+const createPriorityIcon = function () {
+  const inputPriority = this.priority.valueAsNumber;
+  return inputPriority >= 4 ? 'fa-exclamation-triangle' : 'fa-check-circle'
 }

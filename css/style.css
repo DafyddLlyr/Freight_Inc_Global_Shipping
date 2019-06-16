@@ -91,6 +91,7 @@ input, select, textarea {
   font-size: inherit;
   border: 1px lightgrey solid;
   width: 100%;
+  align-self: center;
 }
 
 #size40,
@@ -163,15 +164,19 @@ input[type=date] {
 .priority {
   grid-area: priority;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  background-color: red;
   text-align: center;
+}
+
+.priority i {
+  font-size: 2rem;
 }
 
 .order-id {
   grid-area: order-id;
-  background-color: #4286f4;
+  background-color: none;
   padding: 0.5vw;
   font-weight: bold;
 }
@@ -179,14 +184,34 @@ input[type=date] {
 .order-details {
   grid-area: order-details;
   padding: 0.5vw;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   font-size: 0.8rem;
 }
 
 .shipping-date {
   grid-area: shipping-date;
-  background-color: rgba(141, 182, 248, 0.9);
+  background-color: rgba(141, 182, 248, 1);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.priority-1 {
+  background-color: #6BF442;
+}
+
+.priority-2 {
+  background-color: #B4F442;
+}
+
+.priority-3 {
+  background-color: #F4E942;
+}
+
+.priority-4 {
+  background-color: #F4A042;
+}
+
+.priority-5 {
+  background-color: #F45742;
 }
