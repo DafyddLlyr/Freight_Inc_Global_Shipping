@@ -95,33 +95,23 @@ const createOrderId = function () {
 
 const createOrderDetails = function () {
 
-  const orderDetails = document.createElement('div');
+  const orderDetails = document.createElement('table');
   orderDetails.classList.add('order-details');
 
-  const inputCustomer = this.customer.value
-  const displayCustomer = document.createElement('p');
-  displayCustomer.textContent = `Customer: ${inputCustomer}`;
-  orderDetails.appendChild(displayCustomer);
+  const inputCustomer = this.customer.value;
+  orderDetails.appendChild(tableRow('Customer', inputCustomer));
 
   const inputFreight = this.freightContent.value
-  const displayFreight = document.createElement('p');
-  displayFreight.textContent = `Freight Content: ${inputFreight}`;
-  orderDetails.appendChild(displayFreight)
+  orderDetails.appendChild(tableRow('Freight Content', inputFreight));
 
   const inputCountry = document.getElementById('countryList').value;
-  const displayCountry = document.createElement('p');
-  displayCountry.textContent = `Country: ${inputCountry}`
-  orderDetails.appendChild(displayCountry);
+  orderDetails.appendChild(tableRow('Country', inputCountry));
 
-  const inputSize = containerSize(this.size20, this.highYes)
-  const displaySize = document.createElement('p');
-  displaySize.textContent = `Container Size: ${inputSize}`;
-  orderDetails.appendChild(displaySize);
+  const inputSize = containerSize(this.size20, this.highYes);
+  orderDetails.appendChild(tableRow('Container Size', inputSize));
 
   const inputWeight = this.weight.valueAsNumber;
-  const displayWeight = document.createElement('p');
-  displayWeight.textContent = `Weight: ${inputWeight}kg`;
-  orderDetails.appendChild(displayWeight);
+  orderDetails.appendChild(tableRow('Weight', `${inputWeight}kg`));
 
   return orderDetails;
 }
@@ -131,9 +121,13 @@ const createShippingDate = function () {
   const shippingDate = document.createElement('div');
   shippingDate.classList.add('shipping-date');
 
+  const dateHeader = document.createElement('p');
+  dateHeader.textContent = 'Shipping Date:';
+  shippingDate.appendChild(dateHeader);
+
   const inputDate = this.shippingDate.value
   const displayDate = document.createElement('p');
-  displayDate.textContent = `Shipping Date: ${inputDate}`;
+  displayDate.textContent = inputDate;
   shippingDate.appendChild(displayDate);
 
   return shippingDate;
@@ -154,4 +148,19 @@ const handleContainerSizeChange = function () {
 const createPriorityIcon = function () {
   const inputPriority = this.priority.valueAsNumber;
   return inputPriority >= 4 ? 'fa-exclamation-triangle' : 'fa-check-circle'
+}
+
+const tableRow = function(heading, data) {
+  const newTableRow = document.createElement('tr');
+
+  const tableHeading = document.createElement('th');
+  tableHeading.textContent = heading;
+
+  const tableData = document.createElement('td');
+  tableData.textContent = data;
+
+  newTableRow.appendChild(tableHeading)
+  newTableRow.appendChild(tableData);
+
+  return newTableRow;
 }

@@ -101,7 +101,6 @@ input, select, textarea {
   width: auto;
 }
 
-
 input[type=date] {
   width: auto;
 }
@@ -151,14 +150,26 @@ input[type=date] {
 .shipping-order {
   width: 66vw;
   margin-top: 2vw;
-  border: 1px solid grey;
-  border-radius: 5px;
+  box-shadow: 2px 2px black;
   display: grid;
   grid-template-columns: 10vw auto 20vw;
   grid-template-rows: auto auto;
   grid-template-areas:
     'priority order-id order-id'
     'priority order-details shipping-date'
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding-left: 0.5vw;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 .priority {
@@ -171,7 +182,7 @@ input[type=date] {
 }
 
 .priority i {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .order-id {
@@ -179,6 +190,7 @@ input[type=date] {
   background-color: none;
   padding: 0.5vw;
   font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .order-details {
@@ -190,8 +202,9 @@ input[type=date] {
 
 .shipping-date {
   grid-area: shipping-date;
-  background-color: rgba(141, 182, 248, 1);
+  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
